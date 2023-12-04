@@ -16,24 +16,24 @@ class _SinglePostState extends State<SinglePost> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: myAppBar,
-      body: Column(
-        children: <Widget>[
-          Padding(padding: EdgeInsets.all(20),
-          child: Text(
-            widget.post.title,
-            style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
-          ),
-          ),
-
-          Padding(padding: EdgeInsets.all(20),
-          child: Text(
-            widget.post.body,
-            style: TextStyle(fontSize: 16),
-          ),
-          ),
-          
-        ],
-      )
+      body: Padding(padding: const EdgeInsets.all(10), child:Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),side: const BorderSide(color: Colors.black,width: 2)),
+          child: IntrinsicHeight( child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children:
+          <Widget>[
+            Expanded(
+              child: Padding(padding: EdgeInsets.all(5) ,child: Column(
+                children: <Widget>[
+                  Align(child: Text(widget.post.title,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),),
+                  Align(child: Text(widget.post.body,overflow: TextOverflow.fade,), alignment: Alignment.topLeft),
+                  Align(child: Text("\nfrom: "+widget.post.author,style: const TextStyle(color: Colors.grey,fontSize: 13,fontStyle: FontStyle.italic),), alignment: Alignment.bottomLeft,),
+                ]
+              ))
+            ),
+          ],
+        )
+        )))
     );
   }
 }

@@ -36,15 +36,17 @@ class _PostCreateState extends State<PostCreate> {
             decoration: const InputDecoration(prefixIcon: Icon(Icons.title),labelText: "Title"),
           ),
           ),
-
+          
           Padding(padding: EdgeInsets.all(20),
           child: TextField(
             controller:BodyController,
             keyboardType: TextInputType.multiline,
             maxLines: null,
+            style: TextStyle(fontSize: 13),
             decoration: const InputDecoration(
-              border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black,width: 5))
-              
+              border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black,width: 5)),
+              fillColor: Colors.white,
+              filled: true,
             ),
           ),
           ),
