@@ -1,6 +1,5 @@
 import 'LoginPage.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart'; 
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple, background:Color(0xEEDAFFFB) ),
         useMaterial3: true,
       ),
       home: const LoginPage(),

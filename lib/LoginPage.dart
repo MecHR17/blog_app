@@ -1,4 +1,5 @@
-import 'package:provider/provider.dart';
+
+import 'package:blog_app/myAppBar.dart';
 
 import 'MyHomePage.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Slm"),backgroundColor: Colors.blue,),
+      appBar: myAppBar,
       body: const Body()
       );
   }
@@ -45,6 +46,8 @@ class _BodyState extends State<Body> {
             border: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black, width: 5)),
             prefixIcon: const Icon(Icons.person),
             labelText: "Username:",
+            fillColor: Colors.white,
+            filled: true,
             suffixIcon: IconButton(
               icon: const Icon(Icons.done),
               onPressed: click,
