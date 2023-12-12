@@ -1,9 +1,9 @@
 import 'package:blog_app/myAppBar.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 import 'Post.dart';
 import 'PostList.dart';
-import 'TextInputWidget.dart';
 import 'postCreatePage.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -16,7 +16,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  static List<Post> posts = [];
+  List<Post> posts = [];
   static int ID = 0;
 
   void newPost(String title, String txt){

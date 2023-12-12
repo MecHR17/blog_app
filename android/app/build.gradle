@@ -2,6 +2,10 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+    id "com.google.firebase.appdistribution"
+    id "com.google.firebase.crashlytics"
+    id "com.google.firebase.firebase-perf"
 }
 
 def localProperties = new Properties()
@@ -21,6 +25,8 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
+
+apply plugin: 'com.android.application'
 
 apply plugin: 'com.google.gms.google-services'
 
@@ -67,5 +73,14 @@ flutter {
 }
 
 dependencies {
-    
+      // Import the Firebase BoM
+  implementation platform('com.google.firebase:firebase-bom:32.7.0')
+  // When using the BoM, you don't specify versions in Firebase library dependencies
+
+  // TODO: Add the dependencies for Firebase products you want to use
+  // See https://firebase.google.com/docs/android/setup#available-libraries
+  // For example, add the dependencies for Firebase Authentication and Cloud Firestore
+  implementation "com.google.firebase:firebase-auth"
+  implementation "com.google.firebase:firebase-firestore"
+  implementation 'com.google.firebase:firebase-analytics'
 }

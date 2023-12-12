@@ -1,4 +1,3 @@
-
 import 'package:blog_app/myAppBar.dart';
 
 import 'MyHomePage.dart';
