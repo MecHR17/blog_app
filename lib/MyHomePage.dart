@@ -1,14 +1,15 @@
 import 'package:blog_app/myAppBar.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 import 'Post.dart';
 import 'PostList.dart';
 import 'postCreatePage.dart';
 
+import 'database.dart';
+
 class MyHomePage extends StatefulWidget {
   final String name;
-
+  static const List<Post> posts = [];
   const MyHomePage(this.name, {super.key});
 
   @override
@@ -16,13 +17,27 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Post> posts = [];
-  static int ID = 0;
+  List<Post> posts = MyHomePage.posts;
 
   void newPost(String title, String txt){
-    setState(() {
-      posts.add( Post(title,txt,widget.name,ID++) );
+    var post = Post(title,txt,widget.name);
+    post.id = savePost(post);
+    setState(() { 
+      posts.add( post );
     });
+  }
+
+  void updateHomePage() async{
+    List<Post> allPosts = await getPosts();
+    setState(() {
+      posts = allPosts;
+    });
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    updateHomePage();
   }
 
   void toPostCreate(){
