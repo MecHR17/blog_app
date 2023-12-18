@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'Comment.dart';
-
 class CommentList extends StatefulWidget {
   final List listItems;
   const CommentList(this.listItems, {super.key});

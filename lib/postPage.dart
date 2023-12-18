@@ -1,4 +1,3 @@
-import 'package:blog_app/Comment.dart';
 import 'package:blog_app/CommentList.dart';
 import 'package:blog_app/Post.dart';
 import 'package:blog_app/myAppBar.dart';
