@@ -23,7 +23,7 @@ class _PostListState extends State<PostList> {
       itemCount: widget.listItems.length,
       itemBuilder: (context, index) {
         var post = widget.listItems[widget.listItems.length - index - 1];
-        return GestureDetector(onTap:() => post.viewPost(context), child: Padding(padding: const EdgeInsets.all(10), child:Card(
+        return GestureDetector(onTap:() => post.viewPost(context,widget.name), child: Padding(padding: const EdgeInsets.all(10), child:Card(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),side: const BorderSide(color: Colors.black,width: 2)),
           child: IntrinsicHeight( child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
