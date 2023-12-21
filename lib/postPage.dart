@@ -22,6 +22,8 @@ class _SinglePostState extends State<SinglePost> {
     setState(() {
       comment = controller.text;
       widget.post.commentPost(widget.name, comment);
+      controller.text = "";
+      FocusManager.instance.primaryFocus?.unfocus();
     });
   }
 
