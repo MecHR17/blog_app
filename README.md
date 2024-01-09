@@ -1,3 +1,4 @@
 # blog_app
 
-A new Flutter project.
+20290237
+IOS ile mobil uygulama geliştirme projesi
